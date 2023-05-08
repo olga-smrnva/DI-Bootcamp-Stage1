@@ -4,8 +4,7 @@ import random
 print("Hey, give me a 10 characters long string")
 given_string = input()
 
-if len(given_string) > 10 : print("string too long")
-else : print("string too short")
+print("string too long") if len(given_string) > 10 else print("string too short")
 
 # 2
 firstChar = given_string[0]
