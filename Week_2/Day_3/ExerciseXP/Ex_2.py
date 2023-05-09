@@ -28,8 +28,10 @@ new_family = {}
 member_name = input('Hello, do you want to enter your family\'s info? \n(YES\QUIT) ')
 
 while member_name != 'QUIT' :
-    member_name = input("Enter family member's name: ")  
-    member_age = input("Enter family member's age: ")
+    member_name = input("Enter family member's name: ") 
+    if member_name == 'QUIT' :
+        break 
+    member_age = int(input("Enter family member's age: "))
     # member_age = int(member_age)
 
     new_family[member_name] = member_age
