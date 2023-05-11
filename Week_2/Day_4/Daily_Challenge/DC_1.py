@@ -28,14 +28,14 @@ matrix = [[
 ]]
 
 def descript_matrix(matrix:list):
-   message = ''
-   for column in matrix:
-       for char in column:
-           if char.isalpha():
-               message += char
-           elif message and message[-1] != ' ':
-               message += ' '
-   return message
+	message = ''
+	for column in matrix:
+		for char in column:
+			if char.isalpha():
+				message += char
+			elif message and message[-1] != ' ':
+				message += ' '
+	return message
 
 print(descript_matrix(matrix))
 
