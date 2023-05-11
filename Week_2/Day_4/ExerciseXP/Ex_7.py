@@ -43,14 +43,14 @@ main()
 #  		* Use the season as an argument when calling get_random_temp().
 
 def get_random_temp(season) :
-    season_temp = {
-        'winter': [-10, 16],
-        'spring': [10, 25],
-        'summer': [18, 40],
-        'autumn': [-2, 22]
-    }
-    return random.randint(*season_temp[season])
-    
+	season_temp = {
+		'winter': [-10, 16],
+		'spring': [10, 25],
+		'summer': [18, 40],
+		'autumn': [-2, 22]
+	}
+	return random.randint(*season_temp[season])
+	
 def main() :
 	season = input('Give me one season typing summer, autumn, winter, or spring: \n')
 	temp = get_random_temp(season)

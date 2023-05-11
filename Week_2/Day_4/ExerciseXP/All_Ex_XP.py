@@ -3,7 +3,7 @@
 # 1. Write a function called display_message() that prints one sentence telling everyone what you are learning in this course.
 
 def display_message() :
-    print('Hey there, I\'m stuidying Python!')
+	print('Hey there, I\'m stuidying Python!')
 
 # 2. Call the function, and make sure the message displays correctly.
 
@@ -17,7 +17,7 @@ display_message()
 # 2. The function should print a message, such as "One of my favorite books is <title>". For example: “One of my favorite books is Alice in Wonderland”
 
 def favorite_book(title) :
-    print(f'One of my favorite books is {title}')
+	print(f'One of my favorite books is {title}')
 
 # 3. Call the function, make sure to include a book title as an argument when calling the function.
 
@@ -34,7 +34,7 @@ favorite_book('Harry Potter')
 # 3. Give the country parameter a default value.
 
 def describe_city(city, country = 'Israel') :
-    print(f'{city} is in {country}')
+	print(f'{city} is in {country}')
 
 
 # 4. Call your function.
@@ -50,15 +50,15 @@ describe_city('Tel Aviv')
 import random
 
 def compare_numbers(num) :
-    num = int(num)
-    if num < 1 or num > 100 : return False
-    
-    second_num = random.randint(1,100)
-    if num == second_num :
-        print(f'Success, numbers are the same: {num, second_num}')
-    else : print(f'Failure, numbers are different: {num, second_num}')
-    
-    
+	num = int(num)
+	if num < 1 or num > 100 : return False
+	
+	second_num = random.randint(1,100)
+	if num == second_num :
+		print(f'Success, numbers are the same: {num, second_num}')
+	else : print(f'Failure, numbers are different: {num, second_num}')
+	
+	
 compare_numbers(44)
 
 #___________________________________
@@ -167,14 +167,14 @@ main()
 #  		* Use the season as an argument when calling get_random_temp().
 
 def get_random_temp(season) :
-    season_temp = {
-        'winter': [-10, 16],
-        'spring': [10, 25],
-        'summer': [18, 40],
-        'autumn': [-2, 22]
-    }
-    return random.randint(*season_temp[season])
-    
+	season_temp = {
+		'winter': [-10, 16],
+		'spring': [10, 25],
+		'summer': [18, 40],
+		'autumn': [-2, 22]
+	}
+	return random.randint(*season_temp[season])
+	
 def main() :
 	season = input('Give me one season typing summer, autumn, winter, or spring: \n')
 	temp = get_random_temp(season)
