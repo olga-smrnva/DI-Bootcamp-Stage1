@@ -24,7 +24,6 @@ matrix = [[
    ' ',
    '%',
    '!',
-
 ]]
 
 def descript_matrix(matrix:list):

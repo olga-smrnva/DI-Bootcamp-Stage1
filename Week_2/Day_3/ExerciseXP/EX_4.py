@@ -52,7 +52,7 @@ print(disney_users_A_copy1)
 disney_users_A_copy2 = disney_users_A.copy()
 
 for user in users:
-    if user.startswith('P') or user.startswith('M') :
+    if not user.startswith('P') and not user.startswith('M') :
         del disney_users_A_copy2[user]
         
 print(disney_users_A_copy2)
