@@ -6,9 +6,9 @@ disney_users_A = {}
 number = 0
 
 for user in users:
-    disney_users_A[user] = number
-    number += 1
-    
+	disney_users_A[user] = number
+	number += 1
+	
 print(disney_users_A)
 
 # 2. Use a for loop to recreate the 2nd result. Tip : don’t hardcode the numbers.
@@ -17,9 +17,9 @@ disney_users_B = {}
 number = 0
 
 for user in users:
-    disney_users_B[number] = user
-    number += 1
-    
+	disney_users_B[number] = user
+	number += 1
+	
 print(disney_users_B)
 
 # 3. Use a method to recreate the 3rd result. Hint: The 3rd result is sorted alphabetically.
@@ -31,8 +31,8 @@ number = 0
 disney_users_C = {}
 
 for user in sorted_users:
-    disney_users_C[user] = number
-    number += 1
+	disney_users_C[user] = number
+	number += 1
 
 print(disney_users_C)
 
@@ -42,9 +42,9 @@ print(disney_users_C)
 disney_users_A_copy1 = disney_users_A.copy()
 
 for user in users :
-    if 'i' not in user : 
-        del disney_users_A_copy1[user]
-        
+	if 'i' not in user : 
+		del disney_users_A_copy1[user]
+		
 print(disney_users_A_copy1)
 
 #	*The characters, which names start with the letter “m” or “p”.
@@ -52,8 +52,8 @@ print(disney_users_A_copy1)
 disney_users_A_copy2 = disney_users_A.copy()
 
 for user in users:
-    if not user.startswith('P') and not user.startswith('M') :
-        del disney_users_A_copy2[user]
-        
+	if not user.startswith('P') and not user.startswith('M') :
+		del disney_users_A_copy2[user]
+		
 print(disney_users_A_copy2)
 
