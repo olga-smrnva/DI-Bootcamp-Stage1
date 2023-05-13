@@ -26,7 +26,7 @@ matrix = [[
    '!',
 ]]
 
-def descript_matrix(matrix:list):
+def descript_matrix(matrix):
 	message = ''
 	for column in matrix:
 		for char in column:
