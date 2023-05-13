@@ -8,7 +8,7 @@ board = [
     [" ", " ", " "],
     [" ", " ", " "]
 ]
-
+player = 'X' # X or O
 
 
 
@@ -24,14 +24,26 @@ def player_input(player):
     while True:
         row = input("Enter row(1-3): ")
         column  = input("Input column(1-3): ")
-        if(row in allowed_input and column in allowed_input):
-            return [int(row), int(column)]
+        if row in allowed_input and column in allowed_input:
+            return {row: int(row), column: int(column)}
 
 
 def check_win():
     pass
 
 def play():
-    pass
+    winner_player = ''
+    print("Welcome to TIC TAC TOE!")
 
+    while not winner_player:
+        display_board()
+        print(f"Player {player}'s turn...")
+        player_input(player)
+        is_win = check_win()
+    print('The game ends...')
+    if winner_player == "tie":
+        print("in a tie :(")
+    else:
+        print(f"And {winner_player} wins!!!")
+        
 
