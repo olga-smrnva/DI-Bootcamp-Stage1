@@ -7,22 +7,27 @@
 class Farm:
 	def __init__(self, farm_name):
 		self.name = farm_name
-		self.animal = ''
+		self.animals = {}
 		self.count = 0
 		
-	def add_animal(self, animal_name, count):
-		self.animal = animal_name
-		self.count = count
+	def add_animal(self, animal_name, count=1):
+		if not self.animals.get(animal_name) :
+			self.animals[animal_name] = count
+		else : 
+			self.animals[animal_name] = self.animals[animal_name] + count
 
 	def get_info(self):
-		return f'{self.name}`s farm \n\n \n \n \n\n    E-I-E-I-0!'
-		
+		message = f'{self.name}`s farm \n\n' 
+		for animal, count in self.animals.items():
+			message += f'{animal} : {count} \n'
+		message += '\n    E-I-E-I-0!'
+		return message
 	
 # 6. Bonus: nicely line the text in columns as seen in the example above. Use string formatting.
 
 macdonald = Farm("McDonald")
-# macdonald.add_animal('cow',5)
-# macdonald.add_animal('sheep')
-# macdonald.add_animal('sheep')
-# macdonald.add_animal('goat', 12)
+macdonald.add_animal('cow',5)
+macdonald.add_animal('sheep')
+macdonald.add_animal('sheep')
+macdonald.add_animal('goat', 12)
 print(macdonald.get_info())
