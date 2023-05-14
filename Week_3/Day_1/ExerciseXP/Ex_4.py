@@ -5,17 +5,14 @@
 
 class Zoo:
 	def __init__(self, zoo_name):
-		self.animals = []
+		self.animals = set()
 		self.name = zoo_name
 
 # 3. Create a method called add_animal that takes one parameter new_animal. This method adds the new_animal to the animals list as long as it isn’t already in the list.
 
 	def add_animal(self, new_animal): 
-		for animal in self.animals:
-			if new_animal != animal:
-				self.animals.append(new_animal) 
+		self.animals.add(new_animal)
 		
-
 
 # 4. Create a method called get_animals that prints all the animals of the zoo.
 
@@ -27,11 +24,8 @@ class Zoo:
 # 5. Create a method called sell_animal that takes one parameter animal_sold. This method removes the animal from the list and of course the animal needs to exist in the list.
 
 	def sell_animal(self, animal_sold):
-		sold_animals = []
-		for animal in self.animals:
-			if animal_sold == animal:
-				sold_animals.append(animal_sold)
-				self.animals.remove(animal_sold)
+		if animal_sold in self.animals:
+			self.animals.remove(animal_sold)
 
 
 # 6. Create a method called sort_animals that sorts the animals alphabetically and groups them together based on their first letter.
@@ -62,10 +56,13 @@ class Zoo:
 ramat_gan_safari = Zoo('Ramat Gan Safari')
 
 while True:
-    new_animal = input('Which animal do you want to see in our zoo? Type here (print "quit" to stop): \n')
-    if new_animal == 'quit': break
-    ramat_gan_safari.add_animal(new_animal)
-    ramat_gan_safari.get_animals()
-    ramat_gan_safari.sell_animal('monkey')
-    # ramat_gan_safari.sort_animals()
-    # ramat_gan_safari.get_groups()
+	new_animal = input('Which animal do you want to see in our zoo? Type here (print "quit" to stop): \n')
+	if new_animal == 'quit': 
+		break
+	ramat_gan_safari.add_animal(new_animal)
+
+ramat_gan_safari.get_animals()
+ramat_gan_safari.sell_animal('monkey')
+ramat_gan_safari.get_animals()
+# ramat_gan_safari.sort_animals()
+# ramat_gan_safari.get_groups()
