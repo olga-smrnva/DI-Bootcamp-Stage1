@@ -20,7 +20,7 @@ class Zoo:
 # 4. Create a method called get_animals that prints all the animals of the zoo.
 
 	def get_animals(self):
-		print(*(self.animals), spl=', ')
+		print(*(self.animals), sep=', ')
 
 
 
@@ -66,5 +66,6 @@ while True:
     if new_animal == 'quit': break
     ramat_gan_safari.add_animal(new_animal)
     ramat_gan_safari.get_animals()
+    ramat_gan_safari.sell_animal('monkey')
     # ramat_gan_safari.sort_animals()
     # ramat_gan_safari.get_groups()
