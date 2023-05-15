@@ -30,15 +30,24 @@ class Zoo:
 
 # 6. Create a method called sort_animals that sorts the animals alphabetically and groups them together based on their first letter.
 
-	# def sort_animals(self):
-	# 	self.animals.sort()
-	# 	sorted_animals = {}
-	# 	key = 1
-	# 	for animal in self.animals:
-	# 		if animal[0] != animal[0]:
-	# 			sorted_animals[key] = animal
-	# 			key += 1
-	# 		else : pass
+	def sort_animals(self):
+		sorted_list = list(self.animals)
+		sorted_list.sort()
+		sorted_animals = {}
+		i = 0
+		current_letter = ''
+
+		for animal in sorted_list:
+			if animal[0] != current_letter:
+				i += 1
+				sorted_animals[i] = animal
+				current_letter = animal[0]
+			else:
+				if type(sorted_animals[i]) == list:
+					sorted_animals[i].append(animal)
+				else:
+					sorted_animals[i] = [sorted_animals[i], animal]
+		return sorted_animals
 
 
 # 7. Create a method called get_groups that prints the animal/animals inside each group.
@@ -64,5 +73,5 @@ while True:
 ramat_gan_safari.get_animals()
 ramat_gan_safari.sell_animal('monkey')
 ramat_gan_safari.get_animals()
-# ramat_gan_safari.sort_animals()
+print(ramat_gan_safari.sort_animals())
 # ramat_gan_safari.get_groups()
