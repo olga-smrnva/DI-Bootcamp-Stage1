@@ -52,13 +52,13 @@ class Zoo:
 
 # 7. Create a method called get_groups that prints the animal/animals inside each group.
 
-	# def get_groups(self):
-	# 	print('Groups:')
+	def get_groups(self):
+		sorted_animals = self.sort_animals()
+		print('Groups:')
 		
-	# 	for k, v in self.sorted_animals.items():
-	# 		print (f'{k}: {v}')
-		
-	# 	print(self.__dict__)
+		for k, v in sorted_animals.items():
+			print (f'{k}: {v}')
+
 
 # 8. Create an object called ramat_gan_safari and call all the methods.
 
@@ -73,5 +73,4 @@ while True:
 ramat_gan_safari.get_animals()
 ramat_gan_safari.sell_animal('monkey')
 ramat_gan_safari.get_animals()
-print(ramat_gan_safari.sort_animals())
-# ramat_gan_safari.get_groups()
+ramat_gan_safari.get_groups()
