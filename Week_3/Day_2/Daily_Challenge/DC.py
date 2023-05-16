@@ -7,23 +7,58 @@
 alphabetList = list("abcdefghijklmnopqrstuvwxyz")
 
 class Pagination():
-	def __init__(self, items=None, pageSize=10):
+	def __init__(self, items=None, page_size=10):
 		self.items = items
-		self.pageSize = pageSize
-	
-# 3. The Pagination class will have a few methods:
-# 	* getVisibleItems() : returns a list of items visible depending on the pageSize
+		self.page_size = int(page_size)
+		self.current_page = 1
+		self.pages_data = {}
+		self.number_of_pages = 0
+		self._gen_pages_data()
 
-	def getVisibleItems(self):
-		visible_items =  self.items[0 : self.pageSize]
+	def _gen_pages_data(self):
+		count = 0
+		page = 1
+		for item in self.items:
+			if count < self.page_size:
+				if count == 0:
+					self.pages_data[page] = [item]
+				else:
+					self.pages_data[page].append(item)
+			else:
+				count = 0
+				page+=1
+				self.pages_data[page] = [item]
+			count+=1
+		self.number_of_pages = page
+
+	def prev_page(self):
+		if self.current_page != 1:
+			self.current_page -= 1
+		return self
+
+	def next_page(self):
+		if self.current_page != self.number_of_pages:
+			self.current_page += 1
+		return self
+	
+	def first_page(self):
+		self.current_page = 1
+		return self
+
+	def last_page(self):
+		self.current_page = self.number_of_pages
+		return self
+
+	def go_to_page(self, page_num):
+		if(int(page_num) > 0 and int(page_num) <= self.number_of_pages):
+			self.current_page = int(page_num)
+		return self
+
+	def get_visible_items(self):
+		visible_items =  self.pages_data[self.current_page]
 		print(visible_items)
-			
-# 	* You will have to implement various methods to go through the pages such as:
-		# prevPage()
-		# nextPage()
-		# firstPage()
-		# lastPage()
-		# goToPage(pageNum)
+		return self
+
 
 p = Pagination(alphabetList, 4)
-p.getVisibleItems() 
+p.get_visible_items().next_page().get_visible_items().prev_page().get_visible_items().go_to_page(3).get_visible_items().first_page().get_visible_items().last_page().get_visible_items()
